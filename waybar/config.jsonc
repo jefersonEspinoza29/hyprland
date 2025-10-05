@@ -1,0 +1,13 @@
+{
+  // 🎛️ CONFIGURACIÓN PRINCIPAL DE WAYBAR
+  "layer": "top",
+  "modules-left": ["backlight", "temperature"],
+  "modules-center": ["clock"],
+  "modules-right": ["battery", "pulseaudio"],
+  "spacing" : 0,
+
+  // 🧩 Importar módulos desde "modules/"
+  "include": [
+    "~/.config/waybar/modules/modulos.jsonc"
+  ]
+}

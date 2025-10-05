@@ -1,0 +1,59 @@
+{
+  "backlight": {
+    "format": " {percent}%",
+    "interval": 2,
+    "on-scroll-up": "brillo -q -A 5",
+    "on-scroll-down": "brillo -q -U 5"
+  },
+
+  "pulseaudio": {
+    "id": "pulseaudio",
+    "format": "{volume}%",
+    "format-muted": "MUTED",
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-scroll-up": "bash -c 'vol=$(pactl get-sink-volume @DEFAULT_SINK@ | awk \"{print \\$5}\" | tr -d \"%\"); [ $vol -ge 130 ] || pactl set-sink-volume @DEFAULT_SINK@ +5%'",
+    "on-scroll-down": "bash -c 'vol=$(pactl get-sink-volume @DEFAULT_SINK@ | awk \"{print \\$5}\" | tr -d \"%\"); [ $vol -le 0 ] || pactl set-sink-volume @DEFAULT_SINK@ -5%'"
+  },
+
+  "battery": {
+    "id": "battery",
+    "bat": "BAT1",
+    "adapter": "ACAD",
+    "interval": 30,
+    "format": "{icon} {capacity}%",
+    "format-charging": "{capacity}% ⚡",
+    "format-full": "{capacity}% ",
+    "format-icons": ["", "", "", "", ""],
+    "tooltip": true
+  },
+
+  "clock": {
+    "format": "{:%H:%M}", // reloj simple con ícono
+    "format-alt": "{:%A, %d %B %Y • %H:%M}", // alternativo: fecha completa y hora
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#89dceb'><b>{}</b></span>",
+        "days": "<span color='#cdd6f4'><b>{}</b></span>",
+        "weeks": "<span color='#f9e2af'><b>W{}</b></span>",
+        "weekdays": "<span color='#a6e3a1'><b>{}</b></span>",
+        "today": "<span color='#f38ba8'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions": {
+      "on-click-right": "mode", // alternar entre hora simple y completa
+      "on-scroll-up": "shift_up", // navegar calendario
+      "on-scroll-down": "shift_down"
+    }
+  },
+
+  "temperature": {
+    "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon7/temp1_input",
+    "critical-threshold": 90,
+    "format": "{temperatureC}°C"
+  }
+}

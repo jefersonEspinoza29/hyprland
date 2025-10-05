@@ -1,0 +1,119 @@
+/* Fuente general con soporte de iconos */
+* {
+    font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free", monospace;
+    
+}
+
+/* Barra principal */
+#waybar {
+    background: rgba(0, 0, 0, 0.1);
+    
+    border-radius: 23px;
+    
+    
+    
+}
+
+
+    
+    
+
+.modules-left{
+    font-size: 50pt;
+    
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0);
+}
+
+.modules-center{
+    font-size: 50pt;
+    
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.8);
+    
+}
+
+.modules-right{
+    font-size: 50pt;
+    
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0);
+    
+    
+}
+
+
+
+
+/* Volumen */
+#pulseaudio {
+    color: #183c42;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    padding: 0 10px;
+    margin-right: 5px;
+}
+
+/* Brillo */
+#backlight {
+    color: #183c42;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    padding: 0 10px;
+    margin-right: 5px;
+}
+
+
+
+/* Batería */
+
+
+#battery {
+    color: #183c42;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    padding: 0 10px;
+    margin-right: 5px;
+}
+#battery.charging {
+    color: #4f9e48;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    padding: 0 10px;
+    margin-right: 5px;
+}
+#battery.warning {
+    color: #a9123d;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    padding: 0 10px;
+    margin-right: 5px;
+}
+
+
+
+/* Reloj */
+#clock {
+  color: #ffffff;              /* color base */
+  font-weight: bold;
+  font-size: 16px;
+  padding: 6px 12px;
+  margin: 0 8px;
+  border-radius: 12px;
+  background: rgba(137, 220, 235, 0.15); /* azul translúcido */
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+#clock:hover {
+  background: rgba(137, 220, 235, 0.35);
+  color: #89dceb;
+}
+
+
+#temperature{
+    color: #183c42;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    padding: 0 10px;
+    margin-right: 5px;
+}
