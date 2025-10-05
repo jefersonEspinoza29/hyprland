@@ -2,8 +2,8 @@
   // 🎛️ CONFIGURACIÓN PRINCIPAL DE WAYBAR
   "layer": "top",
   "modules-left": ["backlight", "temperature"],
-  "modules-center": ["clock"],
-  "modules-right": ["battery", "pulseaudio"],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": ["battery", "pulseaudio","clock"],
   "spacing" : 0,
 
   // 🧩 Importar módulos desde "modules/"

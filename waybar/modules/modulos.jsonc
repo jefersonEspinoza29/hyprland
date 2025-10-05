@@ -55,5 +55,20 @@
     "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon7/temp1_input",
     "critical-threshold": 90,
     "format": "{temperatureC}°C"
+  },
+
+
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "on-click": "activate",
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "disable-scroll": false,
+    "all-outputs": true,
+    "sort-by-number": true
   }
+  
+  
 }
+
+
