@@ -3,7 +3,7 @@
   "layer": "top",
   "modules-left": ["backlight", "temperature"],
   "modules-center": ["hyprland/workspaces"],
-  "modules-right": ["battery", "pulseaudio","clock"],
+  "modules-right": ["bluetooth","battery", "pulseaudio","clock"],
   "spacing" : 0,
 
   // 🧩 Importar módulos desde "modules/"

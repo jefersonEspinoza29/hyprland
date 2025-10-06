@@ -28,27 +28,12 @@
   },
 
   "clock": {
-    "format": "{:%H:%M}", // reloj simple con ícono
-    "format-alt": "{:%A, %d %B %Y • %H:%M}", // alternativo: fecha completa y hora
-    "tooltip-format": "<tt><small>{calendar}</small></tt>",
-    "calendar": {
-      "mode": "month",
-      "mode-mon-col": 3,
-      "weeks-pos": "right",
-      "on-scroll": 1,
-      "format": {
-        "months": "<span color='#89dceb'><b>{}</b></span>",
-        "days": "<span color='#cdd6f4'><b>{}</b></span>",
-        "weeks": "<span color='#f9e2af'><b>W{}</b></span>",
-        "weekdays": "<span color='#a6e3a1'><b>{}</b></span>",
-        "today": "<span color='#f38ba8'><b><u>{}</u></b></span>"
-      }
-    },
-    "actions": {
-      "on-click-right": "mode", // alternar entre hora simple y completa
-      "on-scroll-up": "shift_up", // navegar calendario
-      "on-scroll-down": "shift_down"
-    }
+    "intervalo": 60,
+    "format": "{:%H:%M}",
+    "tooltip": true,
+    "on-hover": "eww open calendar",
+    
+    "on-click": "eww close calendar"
   },
 
   "temperature": {
@@ -57,18 +42,27 @@
     "format": "{temperatureC}°C"
   },
 
-
   "hyprland/workspaces": {
     "format": "{name}",
+    "persistent-workspaces": {
+      "3": []
+    },
     "on-click": "activate",
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1",
     "disable-scroll": false,
     "all-outputs": true,
     "sort-by-number": true
+  },
+
+  "bluetooth": {
+    "format": " {status}",
+    "format-connected": " {device_alias}",
+    "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+    // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
   }
-  
-  
 }
-
-

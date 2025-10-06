@@ -16,7 +16,27 @@ sudo pacman -Syu --noconfirm
 
 # --- 2️⃣ Instalar paquetes básicos ---
 echo -e "${YELLOW}Instalando paquetes esenciales...${RESET}"
-sudo pacman -S --noconfirm git hyprland waybar rofi hyprlock swaync wlogout hyprpaper sddm neovim thunar firefox network-manager-applet pamixer brightnessctl pavucontrol
+sudo pacman -S --noconfirm git hyprland sddm waybar rofi hyprlock swaync wlogout hyprpaper neovim thunar firefox network-manager-applet pamixer brightnessctl pavucontrol
+
+#dependencias de eww
+sudo pacman -S base-devel git rustup gtk3 glib2 wayland-protocols
+#activamos rust
+rustup default stable
+
+git clone https://github.com/elkowar/eww.git
+cd eww
+cargo build --release
+#instalamos eww global
+sudo cp target/release/eww /usr/local/bin/
+#creamos carpetas
+mkdir -p ~/.config/eww
+cd ~/.config/eww
+mkdir windows
+mkdir themes
+cd
+
+
+
 
 yay -S wlogout
 yay -S hyprshot
