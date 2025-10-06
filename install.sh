@@ -16,7 +16,11 @@ sudo pacman -Syu --noconfirm
 
 # --- 2️⃣ Instalar paquetes básicos ---
 echo -e "${YELLOW}Instalando paquetes esenciales...${RESET}"
-sudo pacman -S --noconfirm git hyprland waybar rofi wlogout hyprpaper sddm neovim thunar firefox network-manager-applet pamixer brightnessctl pavucontrol
+sudo pacman -S --noconfirm git hyprland waybar rofi hyprlock swaync wlogout hyprpaper sddm neovim thunar firefox network-manager-applet pamixer brightnessctl pavucontrol
+
+yay -S wlogout
+yay -S hyprshot
+
 
 # --- 3️⃣ Clonar repositorio de configuraciones ---
 echo -e "${YELLOW}Clonando repositorio de dotfiles...${RESET}"
@@ -30,6 +34,9 @@ fi
 # --- 4️⃣ Copiar configuraciones ---
 echo -e "${YELLOW}Aplicando configuraciones...${RESET}"
 cp -r ~/dotfiles/.config/* ~/.config/
+
+#copiando configuraciones de wlogout
+cp /etc/wlogout/{layout,style.css} ~/.config/wlogout/
 
 # --- 5️⃣ Habilitar servicios ---
 echo -e "${YELLOW}Habilitando servicios esenciales...${RESET}"
