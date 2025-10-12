@@ -18,6 +18,10 @@ sudo pacman -Syu --noconfirm
 echo -e "${YELLOW}Instalando paquetes esenciales...${RESET}"
 sudo pacman -S --noconfirm git hyprland sddm waybar rofi hyprlock swaync wlogout hyprpaper neovim thunar firefox network-manager-applet pamixer brightnessctl pavucontrol
 
+
+sudo pacman -S jq
+
+
 #dependencias de eww
 sudo pacman -S base-devel git rustup gtk3 glib2 wayland-protocols
 #activamos rust

@@ -135,41 +135,53 @@
   color: #ffffff;
 }
 
-/* ==== WORKSPACES ==== */
+
+/* ==== WORKSPACES - círculos + pastilla activa ==== */
 #workspaces {
-  background-color: rgba(25, 25, 25, 0.25);
-  border-radius: 12px;
-  padding: 4px 6px;
-  margin: 6px;
-}
-
-#workspaces button {
-  color: #ccc;
-  background-color: rgba(255, 255, 255, 0.07);
-  border-radius: 8px;
+  background-color: rgba(240, 240, 240, 0.15);
+  border-radius: 18px;
   padding: 4px 10px;
-  margin: 0 3px;
-  min-width: 24px;
-  font-weight: 500;
-  
-  transition: background-color 150ms ease-in-out, color 150ms ease-in-out;
-}
-
-/* Hover: más contraste, sin hacer desaparecer el número */
-#workspaces button:hover {
-  background-color: rgba(255, 255, 255, 0.25);
-  color: #000000; /* Negro para contraste sobre fondo claro */
-}
-
-/* Activo: gradiente oscuro y texto blanco */
-#workspaces button.active {
-  color: #fff;
-  background-image: linear-gradient(135deg, #0066ff, #0033cc);
+  margin: 6px 10px;
   border: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  min-height: 26px; /* define la altura de la barra */
 }
 
-/* Urgente */
-#workspaces button.urgent {
-  background-color: #ff4d4d;
-  color: #fff;
+/* === bolitas redondas === */
+#workspaces button {
+  background-color: rgba(120, 220, 235, 0.5);
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 0;
+  border: none;
+  transition:
+    width 250ms ease-in-out,
+    border-radius 250ms ease-in-out,
+    background-color 250ms ease-in-out,
+    box-shadow 250ms ease-in-out;
 }
+
+/* === workspace activo: pastilla === */
+#workspaces button.active {
+  background-color: rgb(120, 220, 235);
+  border-radius: 10px;
+  width: 36px;    /* largo */
+  height: 14px;   /* mantiene la forma */
+  box-shadow: 0 0 8px rgba(120, 220, 235, 0.6);
+}
+
+/* === hover (brillo suave) === */
+#workspaces button:hover {
+  background-color: rgba(120, 220, 235, 0.8);
+}
+
+/* === urgente === */
+#workspaces button.urgent {
+  background-color: rgba(255, 90, 90, 0.85);
+}
+

@@ -6,8 +6,60 @@
   "modules-right": ["bluetooth","battery", "pulseaudio","clock"],
   "spacing" : 0,
 
-  // 🧩 Importar módulos desde "modules/"
-  "include": [
-    "~/.config/waybar/modules/modulos.jsonc"
-  ]
+  "backlight": {
+    "format": " {percent}%",
+    "interval": 2,
+    "on-scroll-up": "brillo -q -A 5",
+    "on-scroll-down": "brillo -q -U 5"
+  },
+
+  "pulseaudio": {
+    "id": "pulseaudio",
+    "format": "{volume}%",
+    "format-muted": "MUTED",
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-scroll-up": "bash -c 'vol=$(pactl get-sink-volume @DEFAULT_SINK@ | awk \"{print \\$5}\" | tr -d \"%\"); [ $vol -ge 130 ] || pactl set-sink-volume @DEFAULT_SINK@ +5%'",
+    "on-scroll-down": "bash -c 'vol=$(pactl get-sink-volume @DEFAULT_SINK@ | awk \"{print \\$5}\" | tr -d \"%\"); [ $vol -le 0 ] || pactl set-sink-volume @DEFAULT_SINK@ -5%'"
+  },
+
+  "battery": {
+    "id": "battery",
+    "bat": "BAT1",
+    "adapter": "ACAD",
+    "interval": 30,
+    "format": "{icon} {capacity}%",
+    "format-charging": "{capacity}% ⚡",
+    "format-full": "{capacity}% ",
+    "format-icons": ["", "", "", "", ""],
+    "tooltip": true
+  },
+
+  "clock": {
+    "intervalo": 60,
+    "format": "{:%H:%M}",
+    "tooltip": true,
+    "on-hover": "eww open calendar",
+    
+    "on-click": "eww close calendar"
+  },
+
+  "temperature": {
+    "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon7/temp1_input",
+    "critical-threshold": 90,
+    "format": "{temperatureC}°C"
+  },
+
+  "hyprland/workspaces": {
+  "format": "",
+  "persistent-workspaces": {
+    "1": [], "2": [], "3": [], "4": [], "5": [],
+    "6": [], "7": [], "8": [], "9": [], "10": []
+  },
+  "on-click": "activate",
+  "disable-scroll": false,
+  "sort-by-number": true,
+  "all-outputs": true
+}
+
+
 }
